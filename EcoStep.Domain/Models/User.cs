@@ -13,6 +13,7 @@ public class User : BaseModel
     public int? CountryId { get; set; }
     public int? ProvinceId { get; set; }
     public int? ImageId { get; set; }
+    public List<int> CommunityId { get; set; }
 
 
     #region Navigation Properties
@@ -21,6 +22,8 @@ public class User : BaseModel
     public virtual Gender? Gender { get; set; }
     public virtual Province? Province { get; set; }
     public virtual Image? Image{ get; set; }
+    public virtual Community? Community{ get; set; }
+
     
     #endregion
 
