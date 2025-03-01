@@ -6,8 +6,8 @@ namespace EcoStep.Api.Middleware
     public class FirebaseAuthenticationMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly IAuthenticationService _authService;
-        public FirebaseAuthenticationMiddleware(RequestDelegate next, IAuthenticationService authService)
+        private readonly IFirebaseAuthenticationService _authService;
+        public FirebaseAuthenticationMiddleware(RequestDelegate next, IFirebaseAuthenticationService authService)
         {
             _next = next;
             _authService = authService;
@@ -15,6 +15,14 @@ namespace EcoStep.Api.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
+            if (context.Request.Path.StartsWithSegments("/api/Auth/signup") )
+            {
+                // Si es uno de esos endpoints, omitir la verificación de token
+                await _next(context);
+                return;
+            }
+
+
             var authHeader = context.Request.Headers["Authorization"].ToString();
 
             if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))

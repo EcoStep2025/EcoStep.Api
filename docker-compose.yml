@@ -1,6 +1,6 @@
 services:
   ecostep.api:
-    image: dash977/ecostepapi
+    image: ${DOCKER_REGISTRY-}ecostepapi
     build:
       context: .
       dockerfile: EcoStep.Api/Dockerfile

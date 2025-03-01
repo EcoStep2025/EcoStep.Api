@@ -1,6 +1,6 @@
 ﻿namespace EcoStep.Application.Services.Interfaces;
 
-public interface IAuthenticationService
+public interface IFirebaseAuthenticationService
 {
     Task<string?> VerifyTokenAsync(string token);
 }

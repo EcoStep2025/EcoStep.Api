@@ -1,12 +1,12 @@
 ﻿using EcoStep.Domain.Models;
 using EcoStep.Shared.DTOs.Request.User;
 using EcoStep.Shared.DTOs.Response.User;
+using Org.BouncyCastle.Crypto;
 
 namespace EcoStep.Application.Utilities.Mappers;
 
 public static class UsersMappers
 {
-
     public static User ToModel(this UserCreateRequestDto userCreateRequestDto)
     {
         return new User
@@ -21,10 +21,11 @@ public static class UsersMappers
     {
         return new UserCreateResponseDto
         {
-            Id = user.Id,
-            Name = user.Name,
-            LastName = user.LastName,
-            Email = user.Email,
+            firebaseId = user.FirebaseId,
+            name = user.Name,
+            lastName = user.LastName,
+            email = user.Email,
+            isEmailVerified = user.isEmailVerified
         };
     }
 
@@ -43,6 +44,16 @@ public static class UsersMappers
             ProvinceName = user.Province?.ProvinceName,
             GenderName = user.Gender?.GenderName,
 
+
+        };
+    }
+
+    public static UserVerifyCodeResponseDto ToUserVerifyResponse(this User user)
+    {
+        return new UserVerifyCodeResponseDto
+        {
+            Id = user.Id,
+            isEmailVerified = user.isEmailVerified
 
         };
     }

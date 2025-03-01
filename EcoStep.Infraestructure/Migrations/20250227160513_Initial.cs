@@ -87,6 +87,9 @@ namespace EcoStep.Infrastructure.Migrations
                     CountryId = table.Column<int>(type: "integer", nullable: true),
                     ProvinceId = table.Column<int>(type: "integer", nullable: true),
                     ImageId = table.Column<int>(type: "integer", nullable: true),
+                    VerificationCode = table.Column<string>(type: "text", nullable: true),
+                    isEmailVerified = table.Column<bool>(type: "boolean", nullable: true),
+                    VerificationCodeExpiration = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)

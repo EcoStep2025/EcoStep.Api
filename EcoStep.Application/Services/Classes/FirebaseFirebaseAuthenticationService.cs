@@ -3,7 +3,7 @@ using FirebaseAdmin.Auth;
 
 namespace EcoStep.Application.Services.Classes;
 
-public class FirebaseAuthenticationService : IAuthenticationService
+public class FirebaseFirebaseAuthenticationService : IFirebaseAuthenticationService
 {
     public async Task<string?> VerifyTokenAsync(string token)
     {

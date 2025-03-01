@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Result\" />
     <Folder Include="IQueryableExtensions\" />
     <Folder Include="Filter\" />
   </ItemGroup>

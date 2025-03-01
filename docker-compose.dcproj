@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>c1fc5e0c-2373-4143-92fe-f9278ae6d6a2</ProjectGuid>
+    <ProjectGuid>2e99a905-5b04-4b33-9ca8-04f3d8e0c818</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>ecostep.api</DockerServiceName>

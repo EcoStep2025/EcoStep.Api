@@ -10,4 +10,7 @@ public interface IGenericRepository<T> where T : BaseModel
     Task<T> Update(int id, T model);
     Task<T> SoftDelete(int id);
     Task<List<T>> UpdateList(List<T> models);
+
+
+
 }

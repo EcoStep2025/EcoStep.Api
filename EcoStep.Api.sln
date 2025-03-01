@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoStep.Api", "EcoStep.Api\EcoStep.Api.csproj", "{112F37BE-5A33-4342-825E-282668A25FE1}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoStep.Infrastructure", "EcoStep.Infraestructure\EcoStep.Infrastructure.csproj", "{CFD15CF3-141D-4E76-A12F-7AA78D396189}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoStep.Shared", "EcoStep.Shared\EcoStep.Shared.csproj", "{F712CD86-B952-4EEE-9AE4-A89DF0F383EE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2E99A905-5B04-4B33-9CA8-04F3D8E0C818}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +41,10 @@ Global
 		{F712CD86-B952-4EEE-9AE4-A89DF0F383EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F712CD86-B952-4EEE-9AE4-A89DF0F383EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F712CD86-B952-4EEE-9AE4-A89DF0F383EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1FC5E0C-2373-4143-92FE-F9278AE6D6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1FC5E0C-2373-4143-92FE-F9278AE6D6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1FC5E0C-2373-4143-92FE-F9278AE6D6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1FC5E0C-2373-4143-92FE-F9278AE6D6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E99A905-5B04-4B33-9CA8-04F3D8E0C818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E99A905-5B04-4B33-9CA8-04F3D8E0C818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E99A905-5B04-4B33-9CA8-04F3D8E0C818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E99A905-5B04-4B33-9CA8-04F3D8E0C818}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

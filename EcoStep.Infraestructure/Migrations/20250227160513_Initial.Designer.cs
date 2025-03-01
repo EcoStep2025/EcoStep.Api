@@ -13,7 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcoStep.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250121222909_Initial")]
+    [Migration("20250227160513_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -620,6 +620,15 @@ namespace EcoStep.Infrastructure.Migrations
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("VerificationCode")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("VerificationCodeExpiration")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool?>("isEmailVerified")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

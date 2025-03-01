@@ -28,8 +28,9 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 
 #region Services
 
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserContext, UserContext>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 #endregion
 
@@ -109,7 +110,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddHttpContextAccessor();
 
 // Add custom services
-builder.Services.AddSingleton<IAuthenticationService, FirebaseAuthenticationService>();
+builder.Services.AddSingleton<IFirebaseAuthenticationService, FirebaseFirebaseAuthenticationService>();
 
 #endregion
 

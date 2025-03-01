@@ -2,9 +2,9 @@
 
 public class UserCreateResponseDto
 {
-    public int Id { get; set; }
-    public string? Name { get; set; }
-    public string? LastName { get; set; }
-    public string? Email { get; set; }
-    
+    public string? firebaseId { get; set; }
+    public string? name { get; set; }
+    public string? lastName { get; set; }
+    public string? email { get; set; }
+    public bool? isEmailVerified { get; set; }
 }

@@ -24,4 +24,18 @@ public  class UserRepository : GenericRepository<User>, IUserRepository
         return userDb;
     }
 
+    public async Task<User> GetByEmail(string email)
+    {
+        User? userDataInDb = await _dbSet.FirstOrDefaultAsync(x => x.Email == email);
+
+        return userDataInDb!;
+    }
+
+    public async Task<User> GetByFirebaseId(string firebaseId)
+    {
+        User? userDataInDb = await _dbSet.FirstOrDefaultAsync(x => x.FirebaseId == firebaseId);
+
+        return userDataInDb!;
+    }
+
 }
