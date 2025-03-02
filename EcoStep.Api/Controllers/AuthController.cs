@@ -40,7 +40,7 @@ public class AuthController : ControllerBase
 
         if (response.IsSuccess)
         {
-            return CreatedAtAction(nameof(VerifyCode), new { id = response.Value.Id }, response.Value);
+            return StatusCode(201, response.Value);
         }
         return BadRequest(response.Error);
     }

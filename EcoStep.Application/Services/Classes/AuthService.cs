@@ -81,7 +81,7 @@ public class AuthService : IAuthService
     public async Task<Result<UserVerifyCodeResponseDto>> VerifyCodeAsync(UserVerifyCodeRequestDto userVerifyCodeRequestDto,
         CancellationToken cancellationToken)
     {
-        User userInDb = await _unitOfWork.UserRepository.GetByEmail(userVerifyCodeRequestDto.Email);
+        User userInDb = await _unitOfWork.UserRepository.GetByFirebaseId(userVerifyCodeRequestDto.firebaseId);
 
         if (userInDb == null)
         {

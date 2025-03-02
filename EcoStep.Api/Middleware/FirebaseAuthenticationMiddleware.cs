@@ -15,9 +15,8 @@ namespace EcoStep.Api.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments("/api/Auth/signup") )
+            if (context.Request.Path.StartsWithSegments("/api/Auth/signup")  || context.Request.Path.StartsWithSegments("/api/Auth/verify-code"))
             {
-                // Si es uno de esos endpoints, omitir la verificación de token
                 await _next(context);
                 return;
             }
