@@ -51,7 +51,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "EcoStep API",
+        Title = "VanGo API",
         Version = "v1"
     });
 
