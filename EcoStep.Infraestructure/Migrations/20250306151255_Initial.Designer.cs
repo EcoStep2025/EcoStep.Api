@@ -13,7 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcoStep.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250227160513_Initial")]
+    [Migration("20250306151255_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -617,6 +617,12 @@ namespace EcoStep.Infrastructure.Migrations
 
                     b.Property<int?>("ProvinceId")
                         .HasColumnType("integer");
+
+                    b.Property<int>("RegisterType")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
