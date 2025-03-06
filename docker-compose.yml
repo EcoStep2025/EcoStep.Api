@@ -1,6 +1,35 @@
 services:
   ecostep.api:
-    image: ${DOCKER_REGISTRY-}ecostepapi
+    image: ${DOCKER_REGISTRY-}ecostepapi:latest
     build:
       context: .
       dockerfile: EcoStep.Api/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - DB_CONNECTION=Host=postgres-db;Port=5432;Database=VanGoDb;Username=postgres;Password=abcqwe123
+    networks:
+      - eco-network
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=abcqwe123
+      - POSTGRES_DB=VanGoDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - eco-network
+
+networks:
+  eco-network:
+    driver: bridge
+
+volumes:
+  postgres-data:

@@ -49,6 +49,7 @@ public class AuthService : IAuthService
             if (firebaseUser != null)
             {
                 userCreateRequestDto.FirebaseId = firebaseUser.Uid;
+
                 User userToRegister = await _unitOfWork.UserRepository.Create(userCreateRequestDto.ToModel(), cancellationToken);
                 string codigoConfirmacion = await _emailService.GenerateCode();
 
@@ -98,16 +99,25 @@ public class AuthService : IAuthService
             return Result<UserVerifyCodeResponseDto>.Failure($"El Codigo ha Expirado");
         }
 
+        string customToken = await FirebaseAuth.DefaultInstance.CreateCustomTokenAsync(userVerifyCodeRequestDto.firebaseId);
+
+        userInDb.Token = customToken;
         userInDb.isEmailVerified = true;
         userInDb.VerificationCode = null;
         userInDb.VerificationCodeExpiration = null;
 
         User userVerified = await _unitOfWork.UserRepository.Update(userInDb.Id, userInDb);
 
-        await _unitOfWork.Complete(cancellationToken);
-        var responseDto = userInDb.ToUserVerifyResponse();
+        if (userVerified != null)
+        {
+            await _unitOfWork.Complete(cancellationToken);
+            var responseDto = userInDb.ToUserVerifyResponse();
 
-        return Result<UserVerifyCodeResponseDto>.Success(responseDto);
+            return Result<UserVerifyCodeResponseDto>.Success(responseDto);
+        }
+
+
+        return Result<UserVerifyCodeResponseDto>.Failure($"Ha ocurrido un error al validar al usuario");
 
     }
 

@@ -53,7 +53,8 @@ public static class UsersMappers
         return new UserVerifyCodeResponseDto
         {
             Id = user.Id,
-            isEmailVerified = user.isEmailVerified
+            isEmailVerified = user.isEmailVerified,
+            token = user.Token
 
         };
     }

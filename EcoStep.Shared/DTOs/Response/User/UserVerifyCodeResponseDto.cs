@@ -4,4 +4,5 @@ public class UserVerifyCodeResponseDto
 {
     public int? Id { get; set; }
     public bool? isEmailVerified { get; set; }
+    public string? token { get; set; }
 }
